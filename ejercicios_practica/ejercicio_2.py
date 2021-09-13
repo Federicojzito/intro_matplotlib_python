@@ -27,23 +27,26 @@ if __name__ == '__main__':
     # Su implementación es la siguiente:
     x = list(np.linspace(-4, 4, 20))
 
-    y1 = []
-    for i in x:
-        y1.append(i**2)
+    y1 = [i**2 for i in x]
 
-    y2 = []
-    for i in x:
-        y2.append(i**3)
+    y2 = [i**3 for i in x]
+
 
     # Realizar un gráfico que representen las dos funciones
     # Para ello se debe llamar dos veces a "plot" con el mismo "ax"
+    fig = plt.figure()
+    ax = fig.add_subplot()
 
     # Se debe colocar en la leyenda la función que representa
     # cada función
-
     # Cada función dibujarla con un color distinto
     # a su elección
+    ax.plot(x, y1, c="darkgreen", label='y1 = x**2')
+    ax.plot(x, y2, c="red", label='y2 = x**3')
+     
+    ax.legend()
+   
 
     # Crear acá su gráfico
-
+    plt.show()
     print("terminamos")

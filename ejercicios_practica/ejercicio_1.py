@@ -26,16 +26,23 @@ if __name__ == '__main__':
     x = list(range(-10, 11, 1))
 
     # Bucle que completa y calcula todos los valores de "y"
-    y = []
-    for i in x:
-        y.append(i**2)
+    y = [i**2 for i in x]
 
     # Crear una "figura" y crear un "ax" con add_subplot
     # Graficar el "line plot" de "y" en función de "x"
+    fig = plt.figure()
+    
+    ax = fig.add_subplot()
+    ax.plot(x,y)   
 
     # Colocar la leyenda y el label con el nombre de la función
     # Darle color a la línea a su elección
+    
+    ax.plot(x, y, c='blue', label='y = x**2')
+    ax.legend()    
 
     # Crear acá su gráfico
+    
+    plt.show()
 
     print("terminamos")
